@@ -2,76 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
-  
-    <header>
-      <video autoplay loop muted src="https://www.apple.com/105/media/us/mac/family/2024/b0f6d595-f4dd-4393-8316-102be97a5d1b/anim/welcome/xlarge.mp4"></video>
-    </header>
 
-    <main>
-
-      <div class="card">
-        <figure class="">
-          <img src="https://www.istore.com.ng/cdn/shop/files/Macbook_Pro_M3_Silver_PDP_Image_Position_9__WWEN_1200x.jpg?v=1700841192" alt="">
-        </figure>
-        <figcaption>
-            <h2>Header</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Voluptate suscipit 
-              cum, repudiandae minus officiis dolores!
-            </p>
-            <div class="btn-wrapper">
-              <button>Buy</button>
-            </div>
-        </figcaption>
-      </div>
-
-      <div class="card">
-        <figure class="">
-          <img src="https://www.istore.com.ng/cdn/shop/files/Macbook_Pro_M3_Silver_PDP_Image_Position_9__WWEN_1200x.jpg?v=1700841192" alt="">
-        </figure>
-        <figcaption>
-            <h2>Header</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Voluptate suscipit 
-              cum, repudiandae minus officiis dolores!
-            </p>
-            <div class="btn-wrapper">
-              <button>Buy</button>
-            </div>
-        </figcaption>
-      </div>
-
-      <div class="card">
-        <figure class="">
-          <img src="https://www.istore.com.ng/cdn/shop/files/Macbook_Pro_M3_Silver_PDP_Image_Position_9__WWEN_1200x.jpg?v=1700841192" alt="">
-        </figure>
-        <figcaption>
-            <h2>Header</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Voluptate suscipit 
-              cum, repudiandae minus officiis dolores!
-            </p>
-            <div class="btn-wrapper">
-              <button>Buy</button>
-            </div>
-        </figcaption>
-      </div>
-      
-
-    </main>
+  <div class="container-fluid text-light p-5 bg-dark">
+    <h1 class="text-center">Product Management</h1>
+    <button  type="button" class="btn btn-primary d-block ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Product
+    </button>
+  </div>
 
 
-    <footer>
-      <img src="Screenshot 2024-11-05 at 7.18.56 in the evening.png" alt="">
-    </footer>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Thumbnail</th>
+        <th>Action</th>
+      </thead>
+
+      <tbody id="root">
+        <tr>
+          <td>3003</td>
+          <td>Computer</td>
+          <td>1200$</td>
+          <td>10</td>
+          <td>
+            <img style="height: 60px;" src="https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg" alt="">
+          </td>
+          <td>
+            <button class="btn-edit btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
 
 </body>
+<script defer src="script.js"></script>
 </html>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Id</label>
+            <input type="email" class="form-control" id="id">
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Price</label>
+            <input type="text" class="form-control" id="price">
+          </div>
+
+          <div class="mb-3">
+            <label for="qty" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="qty">
+          </div>
+
+          <div class="mb-3">
+            <label for="thumbnail" class="form-label">Thumbnail</label>
+            <input type="file" class="form-control" id="thumbnail">
+          </div>
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="bi bi-bookmark-x"></i> Close</button>
+            <button id="btn-submit" type="button" class="btn btn-primary" data-bs-dismiss="modal"><i class="bi bi-cloud-download-fill"></i> Save Product</button>
+          </div>
+        </form>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
